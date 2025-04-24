@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="hero-title">Hi, I'm Alex</h1>
+    <p id="hero-subtitle">Web Developer & Designer</p>
+  </header>  <section class="section">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">Project One</div>
+      <div class="project">Project Two</div>
+      <div class="project">Project Three</div>
+    </div>
+  </section>  <script>
+    gsap.from("#hero-title", {duration: 1, y: -50, opacity: 0, ease: "power2.out"});
+    gsap.from("#hero-subtitle", {duration: 1, y: 50, opacity: 0, delay: 0.3, ease: "power2.out"});
+    gsap.from(".project", {
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".projects",
+        start: "top 80%"
+      }
+    });
+  </script></body>
+</html>
