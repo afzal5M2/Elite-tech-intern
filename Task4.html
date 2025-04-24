@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub - Online Learning Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>LearnHub</h1>
+    <div class="auth">
+      <button onclick="login()">Login</button>
+      <button onclick="register()">Register</button>
+    </div>
+  </nav>  <main>
+    <section class="video-section">
+      <h2>Featured Lesson</h2>
+      <video controls preload="metadata" poster="thumbnail.jpg">
+        <source src="lesson1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section><section class="quiz-section">
+  <h2>Quick Quiz</h2>
+  <form id="quiz-form">
+    <p>1. What is HTML?</p>
+    <label><input type="radio" name="q1" value="a"> A programming language</label><br>
+    <label><input type="radio" name="q1" value="b"> A markup language</label><br>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<section class="progress-section">
+  <h2>Your Progress</h2>
+  <progress value="30" max="100"></progress>
+  <p>30% Complete</p>
+</section>
+
+  </main>  <script>
+    function login() {
+      alert("Redirecting to login page...");
+    }
+    function register() {
+      alert("Redirecting to registration page...");
+    }
+    document.getElementById('quiz-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Quiz submitted. We'll track your score!");
+    });
+  </script></body>
+</html>
